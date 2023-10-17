@@ -35,33 +35,26 @@ def add_bg_from_local(image_file):
 
 add_bg_from_local('img_file.jpg') 
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.write(' ')
-with col2:
-    st.markdown(f'''
-            <a href={'https://expat-scr-app-2023.streamlit.app/'}><button style="background-color:#facfd2;">  EXPAT DATA SCRAPER  </button></a>
-            ''', unsafe_allow_html=True)
-with col3:
-        st.write(' ')
+
+def load(url,title, key) :
+    import webbrowser
+    st.markdown("""
+    <style>
+    div.stButton {text-align:center}
+    </style>""", unsafe_allow_html=True)
+
+    if st.button(title, key):
+        webbrowser.open_new_tab(url)
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+local_css('style.css') 
+
+load('https://expat-scr-app-2023.streamlit.app/', 'EXPAT DATA SCRAPER', '1')
+
+load('https://jumia-scra-app-2023.streamlit.app/', 'JUMIA DATA SCRAPER', '2')
+load('https://coinafrica-scr-app-2023.streamlit.app/', 'COINAFRICA DATA SCRAPER', '3')
 
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.write(' ')
-with col2:
-    st.markdown(f'''
-            <a href={'https://jumia-scra-app-2023.streamlit.app/'}><button style="background-color:#facfd2;">  JUMIA DATA SCRAPER  </button></a>
-            ''', unsafe_allow_html=True)
-with col3:
-        st.write(' ')
-
-col1, col2, col3 = st.columns([3,3,3.8])
-with col1:
-    st.write(' ')
-with col2:
-    st.markdown(f'''
-            <a href={'https://coinafrica-scr-app-2023.streamlit.app/'}><button style="background-color:#facfd2;">COINAFRICA DATA SCRAPER</button></a>
-            ''', unsafe_allow_html=True)
-with col3:
-        st.write(' ')
