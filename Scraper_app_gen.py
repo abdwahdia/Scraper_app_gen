@@ -56,5 +56,3 @@ load('https://expat-scr-app-2023.streamlit.app/', 'EXPAT DATA SCRAPER', '1')
 
 load('https://jumia-scra-app-2023.streamlit.app/', 'JUMIA DATA SCRAPER', '2')
 load('https://coinafrica-scr-app-2023.streamlit.app/', 'COINAFRICA DATA SCRAPER', '3')
-
-
