@@ -36,15 +36,24 @@ def add_bg_from_local(image_file):
 add_bg_from_local('img_file.jpg') 
 
 
+from streamlit.components.v1 import html
+def open_page(url):
+    open_script= """
+        <script type="text/javascript">
+            window.open('%s', '_blank').focus();
+        </script>
+    """ % (url)
+    html(open_script)
+
+
 def load(url,title, key) :
-    import webbrowser
     st.markdown("""
     <style>
     div.stButton {text-align:center}
     </style>""", unsafe_allow_html=True)
+    if st.button(title, key): 
+        open_page(url)
 
-    if st.button(title, key):
-        webbrowser.open_new_tab(url)
 
 def local_css(file_name):
     with open(file_name) as f:
@@ -56,3 +65,5 @@ load('https://expat-scr-app-2023.streamlit.app/', 'EXPAT DATA SCRAPER', '1')
 
 load('https://jumia-scra-app-2023.streamlit.app/', 'JUMIA DATA SCRAPER', '2')
 load('https://coinafrica-scr-app-2023.streamlit.app/', 'COINAFRICA DATA SCRAPER', '3')
+
+
