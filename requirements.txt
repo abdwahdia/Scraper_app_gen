@@ -9,4 +9,4 @@ seaborn
 pybase64
 webbrowser
 antigravity
-pip
+pip==23.3
