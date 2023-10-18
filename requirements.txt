@@ -7,4 +7,3 @@ pandas
 streamlit
 seaborn
 pybase64
-pip==23.3
