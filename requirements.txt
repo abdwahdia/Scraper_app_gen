@@ -7,6 +7,4 @@ pandas
 streamlit
 seaborn
 pybase64
-webbrowser
-antigravity
 pip==23.3
